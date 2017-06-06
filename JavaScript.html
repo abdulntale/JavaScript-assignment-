@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile: A JavaScript page showing people's profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="5/tooltip.css" rel="stylesheet" />
+    <script src="5/tooltip.js"></script>
+    <link href="5/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+    <script src="5/thumbnail-slider.js" type="text/javascript"></script>
+    <style>
+        body {font: normal 0.9em Arial;color: #222;margin:0;}
+        header {display: block;font-size: 1.2em;margin-bottom:100px;}        
+        header a, header span {
+            display: inline-block;
+            padding: 4px 8px;
+            margin-right: 10px;
+            border: 2px solid #000;
+            background: #DDD;
+            color: #000;
+            text-decoration: none;
+            text-align: center;
+            height: 20px;
+        }
+        header span {background:white;}
+        a {color: #1155CC;}
+    </style>
+</head>
+<body>
+    <!--start-->
+    <div style="padding:220px 0 100px;background:#708aa8; ">
+        <div id="thumbnail-slider">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <div class="thumb" style="background-image:url(img/1.jpg)">
+                                <h3>Ruta Peter</h3>
+                                Age:24
+                                Gender:Male
+                                Age mistaken to be:30
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/2.jpg">
+                            <h3>Tuza John</h3>
+                           Age:23
+                           Gender:Male
+                           Age mistaken to be:20
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/3.jpg">
+                            <h3>Muhanguzi Joel</h3>
+                            Age:21
+                           Gender:Male
+                           Age mistaken to be:25
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/4.jpg">
+                            <h3>Naluwooza Hope</h3>
+                           Age:22
+                           Gender:Female
+                           Age mistaken to be:25
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/5.jpg">
+                            <h3>Alupo Agatha</h3>
+                            Age:22
+                           Gender:Female
+                           Age mistaken to be:18
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/6.jpg">
+                            <h3>Ampaire Shallote</h3>
+                            Age:22
+                           Gender:Female
+                           Age mistaken to be:26
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/7.jpg">
+                            <h3>Kato Fahad</h3>
+                            Age:22
+                           Gender:Male
+                           Age mistaken to be:19
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/8.jpg">
+                            <h3>Eric Gaster</h3>
+                            Age:23
+                           Gender:Male
+                           Age mistaken to be:21
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/9.jpg">
+                            <h3>Nalwadda Leilah</h3>
+                            Age:24
+                           Gender:Female
+                           Age mistaken to be:30
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/10.jpg">
+                            <h3>Almaur</h3>
+                            Age:5
+                           Gender:Female
+                           Age mistaken to be:7
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/11.jpg">
+                            <h3>Adele</h3>
+                            Age:24
+                           Gender:Female
+                           Age mistaken to be:40
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumb" href="img/12.jpg">
+                            <h3>Abdul Rahman Sudais</h3>
+                            Age:40
+                           Gender:Male
+                           Age mistaken to be:55
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Note: this script should be placed at the bottom of the page, or after the slider markup. It cannot be placed in the head section of the page.
+        var slides = document.getElementById("thumbnail-slider").getElementsByTagName("li");
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].onmouseover = function (e) {
+                var li = this;
+                if (li.thumb) {
+                    var content = "<div class='tip-wrap' style='background-image:url(" + li.thumbSrc + ");'><div class='tip-text'>" + li.thumb.innerHTML + "</div></div>";
+                    tooltip.pop(li, content);
+                }
+            };
+        }
+    </script>
+    <!--end-->
+    <div style="width:700px;margin:40px auto 80px;">
+       
+        <h1>Profile: Shows details of people including the age they are most mistaken to be using a JavaScript Tooltip widget</h1>
+        <p>&nbsp;</p>
+        <p>Hovering over each thumbnail in the image carousel will launch a tooltip window displaying the details of the person.</p>
+        
+    </div>
+    <button onclick="myFunction()">My Credentials</button>
+
+<script>
+function myFunction() {
+    alert("Name: NTALE KIZZA ABDUL");
+	alert("StudentNo. : 215013170");	
+	 alert("RegNo.:15/U/11561/EVE");
+}
+</script>
+</body>
+</html>
